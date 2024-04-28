@@ -1,0 +1,20 @@
+@mixin focusBrown {
+	outline: none;
+	color: #b08968;
+	border: 1px solid #b08968;
+	border-radius: 5px;
+}
+
+@mixin focusTransition {
+	transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+}
+
+@mixin closeBtn {
+	position: absolute;
+	top: 1.25em;
+	right: 1.25em;
+	padding: 1.5em;
+	background-color: transparent;
+	border: 1px solid transparent;
+	cursor: pointer;
+}

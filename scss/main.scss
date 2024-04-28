@@ -1,0 +1,1209 @@
+@use './reset' as *;
+@use './colors' as *;
+@use './mixins' as *;
+
+body {
+	font-family: 'Castoro Titling', cursive;
+	color: $brown-color;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lock-scroll {
+	overflow: hidden;
+}
+
+.white-background {
+	background-color: $white-color;
+	box-shadow: 0px 1px 30px 1px $light-color;
+}
+
+.main-banner {
+	height: 100vh;
+	width: 100vw;
+	background-image: url('../img/banner-nudyess-models-mobile.webp');
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+// FIXED HEADER
+
+.fixed-top-header {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	transition: background-color linear 0.8s, box-shadow linear 0.8s;
+	z-index: 10;
+}
+
+.logo {
+	margin: 0.6em;
+	padding: 0.75em 1em;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+// BURGER BUTTON
+
+.burger-btn {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin: 0.3em 0.25em 0.25em;
+	padding: 1.4em;
+	background-color: transparent;
+	border: 1px solid transparent;
+
+	&__box {
+		position: relative;
+		width: 30px;
+		height: 20px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		position: absolute;
+		right: 0;
+		height: 2px;
+		content: '';
+		background-color: $brown-color;
+		transition: width 0.3s;
+		border-radius: 3px;
+	}
+
+	&__bars {
+		width: 100%;
+
+		&::after {
+			top: 8px;
+			width: 70%;
+		}
+
+		&::before {
+			top: 16px;
+			width: 45%;
+		}
+	}
+}
+
+// NAVIGATION
+
+.nav {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: opacity linear 1s;
+	overflow: hidden;
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	&__close-btn {
+		@include closeBtn;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		background-color: rgb(255, 255, 255);
+		overflow: hidden;
+		z-index: 10;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 4.5em auto 4em;
+	}
+
+	&__link {
+		margin: 0.5em;
+		padding: 0.75em 1.5em;
+		font-size: 1.6rem;
+		color: $brown-color;
+		line-height: normal;
+		letter-spacing: 0.5em;
+		border: 1px solid transparent;
+		transition: color 0.3s linear;
+	}
+
+	&__insta-box {
+		margin: 1.5em auto 3em;
+		cursor: pointer;
+	}
+
+	&__insta-icon {
+		margin: 0.5em;
+		padding: 1em;
+		border: 1px solid transparent;
+	}
+}
+
+// FOOTER
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2em;
+	overflow: hidden;
+
+	&__insta-box {
+		margin-top: 2.35em;
+	}
+
+	&__insta-icon {
+		padding: 1em;
+		border: 1px solid transparent;
+	}
+
+	&__logo {
+		margin: 0.6em 0.6em 3.5em;
+		padding: 0.75em 1em;
+		border: 1px solid transparent;
+		cursor: pointer;
+	}
+
+	&__menu-box {
+		flex-direction: row;
+	}
+
+	&__menu-links {
+		margin: 0.75em;
+		padding: 0.45em;
+		font-size: 1.4rem;
+		text-align: center;
+		color: $brown-color;
+		letter-spacing: 0.2em;
+		border: 1px solid transparent;
+		cursor: pointer;
+		transition: color 0.3s linear;
+	}
+
+	&__copyright {
+		margin: 1.5em 0 3.5em;
+		letter-spacing: 0.1em;
+	}
+}
+
+// HEADING
+
+.heading {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 17%;
+
+	&__main {
+		font-size: 1.7rem;
+		letter-spacing: 0.4em;
+	}
+}
+
+// WOMEN PAGE - MODELS LIST
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	gap: 1.2em;
+	margin-top: 3em;
+}
+
+.model-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid transparent;
+
+	&__img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+
+		&--deskop {
+			display: none;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0.75em;
+	}
+
+	&__name {
+		margin-top: 0.3em;
+		font-size: 1.45rem;
+		text-align: center;
+		color: $brown-color;
+		letter-spacing: 0.2em;
+	}
+}
+
+// MAIN PAGE OF MODEL
+
+.model-banner {
+	height: 75vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.dimensions {
+	flex-direction: column;
+	margin-top: 1em;
+
+	&__button {
+		width: 90%;
+		margin: 1.5em 1em;
+		padding: 0.6em 1em;
+		font-size: 1.6rem;
+		color: $brown-color;
+		letter-spacing: 0.2em;
+		border-top: 1px solid $brown-color;
+		border-bottom: 1px solid $brown-color;
+		background-color: transparent;
+		overflow: hidden;
+
+		&:focus {
+			@include focusBrown;
+		}
+	}
+
+	&__box {
+		display: none;
+		flex-direction: column;
+		width: 90%;
+		margin-top: 2em;
+		transform: translateY(-200%);
+
+		&--active {
+			display: flex;
+			transform: translateY(0%);
+		}
+	}
+
+	&__details {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+	}
+
+	&__detail {
+		margin-bottom: 1em;
+		font-size: 1.25rem;
+		letter-spacing: 0.15em;
+	}
+
+	&__instagram {
+		padding: 0.5em 1em;
+		font-size: 1.3rem;
+		color: $brown-color;
+		letter-spacing: 0.1em;
+		border: 1px solid transparent;
+	}
+}
+
+.grid-container-model {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: auto;
+	gap: 1.5em;
+	margin: 3em 0;
+}
+
+.header {
+	flex-direction: column;
+
+	&__space {
+		height: 13vh;
+	}
+
+	&__box {
+		flex-direction: column;
+	}
+
+	&__model-name {
+		margin-bottom: 1em;
+		text-align: center;
+		font-size: 3.5rem;
+		letter-spacing: 0.12em;
+	}
+
+	&__instagram {
+		display: none;
+	}
+
+	&__model-banner {
+		margin-bottom: 1.2em;
+		max-width: 100%;
+
+		&--deskop {
+			display: none;
+		}
+	}
+}
+
+// CONTACT PAGE
+
+.contact {
+	flex-direction: column;
+	margin: 4.5em 2em 4.5em;
+
+	&__banner {
+		height: auto;
+		width: 100%;
+		margin-bottom: 3em;
+		border-radius: 8px;
+	}
+
+	&__details {
+		flex-direction: column;
+		margin-bottom: 1.5em;
+	}
+
+	&__name {
+		padding: 1em 1em 0 1em;
+		font-size: 1.3rem;
+		letter-spacing: 0.5em;
+	}
+
+	&__job-title {
+		padding: 0.5em 1em 1em 1em;
+		letter-spacing: 0.25em;
+	}
+
+	&__phone {
+		margin: 0em 1em 0.4em;
+		font-size: 1.3rem;
+		letter-spacing: 0.25em;
+	}
+
+	&__email {
+		margin-top: 0.5em;
+		letter-spacing: 0.35em;
+	}
+
+	&__phone,
+	&__email {
+		padding: 0.2em 0.4em;
+		color: $brown-color;
+		border: 1px solid transparent;
+	}
+
+	&__insta {
+		margin-top: 3.5em;
+		padding: 0.5em;
+		border: 1px solid transparent;
+		cursor: pointer;
+	}
+}
+
+.application {
+	margin: 5em 3em;
+
+	&__info,
+	&__form-container,
+	&__input-box,
+	&__pop-up {
+		flex-direction: column;
+	}
+
+	&__h2 {
+		margin-top: 1.25em;
+	}
+
+	&__h2,
+	&__text {
+		margin-bottom: 2em;
+		text-align: justify;
+	}
+
+	&__h2,
+	&__label {
+		letter-spacing: 0.15em;
+	}
+
+	&__form,
+	&__input {
+		width: 100%;
+	}
+
+	&__input-box.error input {
+		background-color: $light-red-color;
+	}
+
+	&__label {
+		margin-bottom: 1.1em;
+		font-size: 1.35rem;
+	}
+
+	&__input {
+		padding: 1.8em;
+		font-size: 1.2rem;
+		color: $brown-color;
+		text-align: center;
+		border: 1px solid $brown-color;
+	}
+
+	&__error-text {
+		visibility: hidden;
+		margin: 0.85em 0;
+		font-size: 1.1rem;
+		color: $red-color;
+	}
+
+	&__input-box.error &__error-text {
+		visibility: visible;
+	}
+
+	&__text,
+	&__photo-instruction {
+		margin-bottom: 1.5em;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+	}
+
+	&__privacy {
+		margin-top: 3em;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+	}
+
+	&__upload-label {
+		margin: 1em 0 2em;
+		width: 100%;
+		font-size: 1.35rem;
+		cursor: pointer;
+	}
+
+	&__upload-file {
+		display: none;
+	}
+
+	&__custom-text,
+	&__error-text,
+	&__upload-label {
+		text-align: center;
+	}
+
+	&__photo-instruction,
+	&__privacy {
+		text-align: justify;
+	}
+
+	&__custom-text {
+		margin-bottom: 0.75em;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+	}
+
+	&__btn-box {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 1em;
+	}
+
+	&__apply-btn,
+	&__clear-btn,
+	&__close-btn,
+	&__upload-label {
+		font-size: 1.2rem;
+		font-weight: 400;
+		color: $brown-color;
+		letter-spacing: 0.05em;
+		background-color: transparent;
+		border: 1px solid $brown-color;
+	}
+
+	&__apply-btn {
+		padding: 1em 4em;
+	}
+	&__clear-btn,
+	&__upload-label {
+		padding: 1em 3em;
+	}
+	&__close-btn {
+		padding: 1em 3em;
+	}
+
+	&__pop-up {
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		top: 0;
+		background-color: $white-color;
+		transform: translateX(-100%);
+		opacity: 0;
+		transition: opacity linear 1s;
+		overflow: hidden;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	&__pop-up-text {
+		margin: 1em 2em;
+		font-size: 1.35rem;
+		text-align: center;
+	}
+
+	&__close-btn {
+		margin: 1em 0 2em;
+	}
+}
+
+.reg {
+	display: flex;
+	flex-direction: column;
+	margin: 6em 3.5em 2em;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__text {
+		margin-bottom: 1em;
+		padding: 1em 0;
+		font-size: 1.2rem;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+		text-align: justify;
+	}
+
+	&__h2-text {
+		padding: 1em 0.5em;
+		letter-spacing: 0.2em;
+		text-align: center;
+		color: $brown-color;
+	}
+
+	&__email-box {
+		width: 100%;
+		margin-bottom: 1.5em;
+		background-color: $light-brown-color;
+		border-radius: 1px solid $light-brown-color;
+		cursor: pointer;
+	}
+
+	&__email {
+		width: 100%;
+		padding: 1em 0;
+		color: $white-color;
+		letter-spacing: 0.2em;
+		text-align: center;
+	}
+
+	&__email-button {
+		width: 100%;
+		padding: 1em 0;
+		font-size: 1.3rem;
+		color: $brown-color;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid $brown-color;
+		border-radius: 8px;
+		transition: background-color 0.5s linear, color 0.5s linear;
+
+		&:hover {
+			background-color: $brown-color;
+			color: $white-color;
+		}
+	}
+
+	&__instruction {
+		padding: 0.75em 0 2em;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+}
+
+.about {
+	flex-direction: column;
+	margin: 6em 3.5em 2em;
+
+	&__text {
+		margin-bottom: 1em;
+		padding: 1em 0;
+		font-size: 1.2rem;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+		text-align: justify;
+	}
+
+	&__links-box {
+		margin-bottom: 2.5em;
+	}
+
+	&__h2-text {
+		padding: 1em 0.5em;
+		letter-spacing: 0.2em;
+		text-align: center;
+		color: $brown-color;
+	}
+}
+
+.not-found {
+	flex-direction: column;
+	margin: 4em 0 0;
+	padding: 2em;
+
+	&__info,
+	&__link {
+		padding: 2em 0;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	&__link {
+		color: $brown-color;
+		font-size: 1.4rem;
+		text-decoration: underline;
+	}
+}
+
+.cookies {
+	margin: 5em 3em;
+	padding: 1em 0;
+	font-size: 1.2rem;
+	letter-spacing: 0.2em;
+	line-height: 1.5em;
+	text-align: justify;
+}
+
+@media (max-width: 320px) {
+	.nav {
+		&__link {
+			font-size: 1.4rem;
+			text-align: center;
+		}
+	}
+
+	.heading {
+		height: 20%;
+		&__main {
+			font-size: 1.2rem;
+		}
+	}
+	.model-card {
+		&__name {
+			font-size: 1rem;
+		}
+	}
+	.application {
+		&__h2,
+		&__label {
+			font-size: 1.2rem;
+		}
+
+		&__input {
+			font-size: 0.8rem;
+		}
+
+		&__apply-btn {
+			padding: 1em 3.5em;
+		}
+
+		&__clear-btn {
+			padding: 1em 2em;
+		}
+	}
+}
+
+@media (min-width: 621px) {
+	.about {
+		margin: 6em 3.5em 2em;
+	}
+}
+
+@media (min-width: 768px) {
+	::placeholder {
+		font-size: 1.15rem;
+	}
+
+	.nav {
+		&__link {
+			font-size: 1.8rem;
+		}
+	}
+
+	.main-banner {
+		background-image: url('../img/banner-nudyess-models-deskop.webp');
+	}
+
+	.heading {
+		&__main {
+			font-size: 2.25rem;
+		}
+	}
+
+	.model-card {
+		&__name {
+			font-size: 1.75rem;
+		}
+
+		&__img {
+			&--deskop {
+				display: block;
+			}
+
+			&--mobile {
+				display: none;
+			}
+		}
+	}
+
+	.dimensions {
+		&__button {
+			font-size: 1.8rem;
+		}
+
+		&__detail {
+			font-size: 1.4rem;
+		}
+		&__instagram {
+			display: none;
+		}
+	}
+
+	.header {
+		&__space {
+			height: 8vh;
+		}
+
+		&__box {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5em;
+			max-width: 1200px;
+			margin-bottom: 3em;
+			overflow: hidden;
+		}
+
+		&__details-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__model-name {
+			width: 100%;
+			margin-bottom: 0;
+			font-size: 5rem;
+			letter-spacing: 0.4em;
+			text-align: center;
+		}
+
+		&__instagram {
+			display: block;
+			padding: 0.1em 0.2em;
+			width: 100%;
+			font-size: 3.35rem;
+			color: $brown-color;
+			text-align: center;
+			letter-spacing: 0.15em;
+			border: 1px solid transparent;
+			transition: color 0.3s linear;
+
+			&:focus {
+				@include focusBrown;
+			}
+		}
+
+		&__model-banner {
+			margin-bottom: 0;
+
+			&--deskop {
+				display: block;
+			}
+
+			&--mobile {
+				display: none;
+			}
+		}
+	}
+
+	.grid-container-model {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.application {
+		max-width: 500px;
+		&__h2 {
+			font-size: 1.8rem;
+		}
+
+		&__text,
+		&__photo-instruction,
+		&__custom-text,
+		&__privacy {
+			font-size: 1.3rem;
+		}
+
+		&__label,
+		&__apply-btn,
+		&__clear-btn,
+		&__close-btn,
+		&__upload-label {
+			font-size: 1.5rem;
+		}
+
+		&__btn-box {
+			justify-content: space-evenly;
+		}
+	}
+
+	.reg {
+		&__email-box {
+			width: 70%;
+		}
+
+		&__email {
+			width: 70%;
+			font-size: 1.6rem;
+		}
+
+		&__instruction {
+			font-size: 1.3rem;
+			letter-spacing: 0.15em;
+		}
+	}
+
+	.about,
+	.registration {
+		&__text {
+			margin-bottom: 2em;
+			font-size: 1.3rem;
+		}
+
+		&__h2-text {
+			font-size: 1.6rem;
+		}
+	}
+
+	.not-found {
+		&__info,
+		&__link {
+			font-size: 1.4rem;
+		}
+
+		&__link {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.wrapper {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1200px;
+	}
+
+	.logo {
+		@include focusTransition;
+
+		&:focus {
+			@include focusBrown;
+		}
+	}
+
+	.burger-btn {
+		@include focusTransition;
+
+		&:focus {
+			@include focusBrown;
+		}
+
+		&:hover {
+			.burger-btn__bars::after,
+			.burger-btn__bars::before {
+				width: 100%;
+			}
+		}
+		&__bars {
+			&::before {
+				transition-delay: 0.15s;
+			}
+		}
+	}
+
+	.nav {
+		&__close-btn {
+			@include focusTransition;
+
+			&:focus {
+				@include focusBrown;
+			}
+		}
+
+		&__link {
+			font-size: 2rem;
+			@include focusTransition;
+
+			&:hover {
+				color: $light-brown-color;
+			}
+
+			&:focus {
+				@include focusBrown;
+			}
+		}
+
+		&__insta-icon {
+			&:focus {
+				@include focusBrown;
+			}
+		}
+	}
+
+	.footer {
+		&__insta-icon {
+			&:focus {
+				@include focusBrown;
+			}
+		}
+
+		&__logo {
+			&:focus {
+				@include focusBrown;
+			}
+		}
+
+		&__menu-links {
+			&:focus {
+				@include focusBrown;
+			}
+		}
+	}
+
+	.grid-container {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5em;
+		margin-top: 6em;
+	}
+
+	.model-card {
+		@include focusTransition;
+		&:focus {
+			@include focusBrown;
+		}
+		&__box {
+			margin: 1em;
+		}
+
+		&__name {
+			font-size: 1.55rem;
+		}
+	}
+
+	.contact {
+		height: 100%;
+
+		&__name {
+			font-size: 1.5rem;
+			letter-spacing: 0.75em;
+		}
+
+		&__job-title {
+			letter-spacing: 0.5em;
+			font-size: 1.1rem;
+		}
+
+		&__phone {
+			font-size: 1.5rem;
+			letter-spacing: 0.45em;
+		}
+
+		&__email {
+			font-size: 1.4rem;
+			letter-spacing: 0.35em;
+		}
+
+		&__phone,
+		&__email {
+			&:hover {
+				color: $light-brown-color;
+			}
+		}
+
+		&__phone,
+		&__email,
+		&__insta {
+			@include focusTransition;
+			&:focus {
+				@include focusBrown;
+			}
+		}
+	}
+
+	.footer {
+		&__menu-links {
+			font-size: 1.6rem;
+
+			&:hover {
+				color: $light-brown-color;
+			}
+		}
+
+		&__copyright {
+			font-size: 1.3rem;
+		}
+	}
+
+	.model-banner {
+		height: 85vh;
+	}
+
+	.header {
+		&__space {
+			height: 9vh;
+		}
+
+		&__details-box {
+			margin: 0 8em 4em 0;
+			margin-right: 8em;
+		}
+
+		&__instagram {
+			&:hover {
+				color: $light-brown-color;
+			}
+		}
+	}
+
+	.dimensions {
+		&__button {
+			display: none;
+		}
+		&__box {
+			display: flex;
+			flex-direction: row;
+			margin-top: 3em;
+			width: 78%;
+			transform: translateY(0%);
+		}
+
+		&__details {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5em;
+		}
+
+		&__detail {
+			margin-right: 0.45em;
+			font-size: 1.55rem;
+		}
+
+		&__instagram {
+			@include focusTransition;
+
+			&:focus {
+				@include focusBrown;
+			}
+		}
+	}
+
+	.application {
+		max-width: 650px;
+
+		&__input {
+			@include focusTransition;
+
+			&:focus {
+				@include focusBrown;
+			}
+		}
+
+		&__clear-btn,
+		&__apply-btn,
+		&__upload-label,
+		&__close-btn {
+			@include focusTransition;
+			transition: box-shadow 0.3s linear;
+			&:focus {
+				outline: none;
+				background-color: transparent;
+				box-shadow: 4px 4px 6px rgb(115, 104, 97);
+			}
+
+			&:hover {
+				box-shadow: 4px 4px 6px rgb(161, 150, 142);
+			}
+		}
+	}
+
+	.about {
+		&__h2-text {
+			border: 1px solid transparent;
+			transition: color 0.3s linear;
+
+			&:hover {
+				color: $light-brown-color;
+			}
+
+			&:focus {
+				@include focusBrown;
+			}
+		}
+	}
+
+	.not-found {
+		&__info,
+		&__link {
+			font-size: 1.6rem;
+		}
+
+		&__link {
+			font-size: 1.7rem;
+		}
+	}
+
+	.reg {
+		&__text {
+			font-size: 1.3rem;
+		}
+
+		&__email-button {
+			width: 50%;
+		}
+	}
+}

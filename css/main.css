@@ -1,0 +1,1051 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  text-transform: uppercase;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::-moz-placeholder {
+  color: #583101;
+  letter-spacing: 0.05em;
+}
+
+::placeholder {
+  color: #583101;
+  letter-spacing: 0.05em;
+}
+
+body {
+  font-family: "Castoro Titling", cursive;
+  color: #583101;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+.white-background {
+  background-color: white;
+  box-shadow: 0px 1px 30px 1px #ede0d4;
+}
+
+.main-banner {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/banner-nudyess-models-mobile.webp");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.fixed-top-header {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: background-color linear 0.8s, box-shadow linear 0.8s;
+  z-index: 10;
+}
+
+.logo {
+  margin: 0.6em;
+  padding: 0.75em 1em;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.burger-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0.3em 0.25em 0.25em;
+  padding: 1.4em;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.burger-btn__box {
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  height: 2px;
+  content: "";
+  background-color: #583101;
+  transition: width 0.3s;
+  border-radius: 3px;
+}
+.burger-btn__bars {
+  width: 100%;
+}
+.burger-btn__bars::after {
+  top: 8px;
+  width: 70%;
+}
+.burger-btn__bars::before {
+  top: 16px;
+  width: 45%;
+}
+
+.nav {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity linear 1s;
+  overflow: hidden;
+  z-index: 100;
+}
+.nav--active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.nav__close-btn {
+  position: absolute;
+  top: 1.25em;
+  right: 1.25em;
+  padding: 1.5em;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.nav__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  z-index: 10;
+}
+.nav__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4.5em auto 4em;
+}
+.nav__link {
+  margin: 0.5em;
+  padding: 0.75em 1.5em;
+  font-size: 1.6rem;
+  color: #583101;
+  line-height: normal;
+  letter-spacing: 0.5em;
+  border: 1px solid transparent;
+  transition: color 0.3s linear;
+}
+.nav__insta-box {
+  margin: 1.5em auto 3em;
+  cursor: pointer;
+}
+.nav__insta-icon {
+  margin: 0.5em;
+  padding: 1em;
+  border: 1px solid transparent;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2em;
+  overflow: hidden;
+}
+.footer__insta-box {
+  margin-top: 2.35em;
+}
+.footer__insta-icon {
+  padding: 1em;
+  border: 1px solid transparent;
+}
+.footer__logo {
+  margin: 0.6em 0.6em 3.5em;
+  padding: 0.75em 1em;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.footer__menu-box {
+  flex-direction: row;
+}
+.footer__menu-links {
+  margin: 0.75em;
+  padding: 0.45em;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #583101;
+  letter-spacing: 0.2em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: color 0.3s linear;
+}
+.footer__copyright {
+  margin: 1.5em 0 3.5em;
+  letter-spacing: 0.1em;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 17%;
+}
+.heading__main {
+  font-size: 1.7rem;
+  letter-spacing: 0.4em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 1.2em;
+  margin-top: 3em;
+}
+
+.model-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.model-card__img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.model-card__img--deskop {
+  display: none;
+}
+.model-card__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75em;
+}
+.model-card__name {
+  margin-top: 0.3em;
+  font-size: 1.45rem;
+  text-align: center;
+  color: #583101;
+  letter-spacing: 0.2em;
+}
+
+.model-banner {
+  height: 75vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dimensions {
+  flex-direction: column;
+  margin-top: 1em;
+}
+.dimensions__button {
+  width: 90%;
+  margin: 1.5em 1em;
+  padding: 0.6em 1em;
+  font-size: 1.6rem;
+  color: #583101;
+  letter-spacing: 0.2em;
+  border-top: 1px solid #583101;
+  border-bottom: 1px solid #583101;
+  background-color: transparent;
+  overflow: hidden;
+}
+.dimensions__button:focus {
+  outline: none;
+  color: #b08968;
+  border: 1px solid #b08968;
+  border-radius: 5px;
+}
+.dimensions__box {
+  display: none;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 2em;
+  transform: translateY(-200%);
+}
+.dimensions__box--active {
+  display: flex;
+  transform: translateY(0%);
+}
+.dimensions__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.dimensions__detail {
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+}
+.dimensions__instagram {
+  padding: 0.5em 1em;
+  font-size: 1.3rem;
+  color: #583101;
+  letter-spacing: 0.1em;
+  border: 1px solid transparent;
+}
+
+.grid-container-model {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  gap: 1.5em;
+  margin: 3em 0;
+}
+
+.header {
+  flex-direction: column;
+}
+.header__space {
+  height: 13vh;
+}
+.header__box {
+  flex-direction: column;
+}
+.header__model-name {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 3.5rem;
+  letter-spacing: 0.12em;
+}
+.header__instagram {
+  display: none;
+}
+.header__model-banner {
+  margin-bottom: 1.2em;
+  max-width: 100%;
+}
+.header__model-banner--deskop {
+  display: none;
+}
+
+.contact {
+  flex-direction: column;
+  margin: 4.5em 2em 4.5em;
+}
+.contact__banner {
+  height: auto;
+  width: 100%;
+  margin-bottom: 3em;
+  border-radius: 8px;
+}
+.contact__details {
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}
+.contact__name {
+  padding: 1em 1em 0 1em;
+  font-size: 1.3rem;
+  letter-spacing: 0.5em;
+}
+.contact__job-title {
+  padding: 0.5em 1em 1em 1em;
+  letter-spacing: 0.25em;
+}
+.contact__phone {
+  margin: 0em 1em 0.4em;
+  font-size: 1.3rem;
+  letter-spacing: 0.25em;
+}
+.contact__email {
+  margin-top: 0.5em;
+  letter-spacing: 0.35em;
+}
+.contact__phone, .contact__email {
+  padding: 0.2em 0.4em;
+  color: #583101;
+  border: 1px solid transparent;
+}
+.contact__insta {
+  margin-top: 3.5em;
+  padding: 0.5em;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.application {
+  margin: 5em 3em;
+}
+.application__info, .application__form-container, .application__input-box, .application__pop-up {
+  flex-direction: column;
+}
+.application__h2 {
+  margin-top: 1.25em;
+}
+.application__h2, .application__text {
+  margin-bottom: 2em;
+  text-align: justify;
+}
+.application__h2, .application__label {
+  letter-spacing: 0.15em;
+}
+.application__form, .application__input {
+  width: 100%;
+}
+.application__input-box.error input {
+  background-color: rgba(235, 137, 137, 0.5137254902);
+}
+.application__label {
+  margin-bottom: 1.1em;
+  font-size: 1.35rem;
+}
+.application__input {
+  padding: 1.8em;
+  font-size: 1.2rem;
+  color: #583101;
+  text-align: center;
+  border: 1px solid #583101;
+}
+.application__error-text {
+  visibility: hidden;
+  margin: 0.85em 0;
+  font-size: 1.1rem;
+  color: #d84c4c;
+}
+.application__input-box.error .application__error-text {
+  visibility: visible;
+}
+.application__text, .application__photo-instruction {
+  margin-bottom: 1.5em;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+}
+.application__privacy {
+  margin-top: 3em;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+}
+.application__upload-label {
+  margin: 1em 0 2em;
+  width: 100%;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+.application__upload-file {
+  display: none;
+}
+.application__custom-text, .application__error-text, .application__upload-label {
+  text-align: center;
+}
+.application__photo-instruction, .application__privacy {
+  text-align: justify;
+}
+.application__custom-text {
+  margin-bottom: 0.75em;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+}
+.application__btn-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+.application__apply-btn, .application__clear-btn, .application__close-btn, .application__upload-label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #583101;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  border: 1px solid #583101;
+}
+.application__apply-btn {
+  padding: 1em 4em;
+}
+.application__clear-btn, .application__upload-label {
+  padding: 1em 3em;
+}
+.application__close-btn {
+  padding: 1em 3em;
+}
+.application__pop-up {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: white;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity linear 1s;
+  overflow: hidden;
+  z-index: 10;
+}
+.application__pop-up--active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.application__pop-up-text {
+  margin: 1em 2em;
+  font-size: 1.35rem;
+  text-align: center;
+}
+.application__close-btn {
+  margin: 1em 0 2em;
+}
+
+.reg {
+  display: flex;
+  flex-direction: column;
+  margin: 6em 3.5em 2em;
+}
+.reg__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reg__text {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.reg__h2-text {
+  padding: 1em 0.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: #583101;
+}
+.reg__email-box {
+  width: 100%;
+  margin-bottom: 1.5em;
+  background-color: #b08968;
+  border-radius: 1px solid #b08968;
+  cursor: pointer;
+}
+.reg__email {
+  width: 100%;
+  padding: 1em 0;
+  color: white;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+.reg__email-button {
+  width: 100%;
+  padding: 1em 0;
+  font-size: 1.3rem;
+  color: #583101;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #583101;
+  border-radius: 8px;
+  transition: background-color 0.5s linear, color 0.5s linear;
+}
+.reg__email-button:hover {
+  background-color: #583101;
+  color: white;
+}
+.reg__instruction {
+  padding: 0.75em 0 2em;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.about {
+  flex-direction: column;
+  margin: 6em 3.5em 2em;
+}
+.about__text {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.about__links-box {
+  margin-bottom: 2.5em;
+}
+.about__h2-text {
+  padding: 1em 0.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: #583101;
+}
+
+.not-found {
+  flex-direction: column;
+  margin: 4em 0 0;
+  padding: 2em;
+}
+.not-found__info, .not-found__link {
+  padding: 2em 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.not-found__link {
+  color: #583101;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+.cookies {
+  margin: 5em 3em;
+  padding: 1em 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+@media (max-width: 320px) {
+  .nav__link {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .heading {
+    height: 20%;
+  }
+  .heading__main {
+    font-size: 1.2rem;
+  }
+  .model-card__name {
+    font-size: 1rem;
+  }
+  .application__h2, .application__label {
+    font-size: 1.2rem;
+  }
+  .application__input {
+    font-size: 0.8rem;
+  }
+  .application__apply-btn {
+    padding: 1em 3.5em;
+  }
+  .application__clear-btn {
+    padding: 1em 2em;
+  }
+}
+@media (min-width: 621px) {
+  .about {
+    margin: 6em 3.5em 2em;
+  }
+}
+@media (min-width: 768px) {
+  ::-moz-placeholder {
+    font-size: 1.15rem;
+  }
+  ::placeholder {
+    font-size: 1.15rem;
+  }
+  .nav__link {
+    font-size: 1.8rem;
+  }
+  .main-banner {
+    background-image: url("../img/banner-nudyess-models-deskop.webp");
+  }
+  .heading__main {
+    font-size: 2.25rem;
+  }
+  .model-card__name {
+    font-size: 1.75rem;
+  }
+  .model-card__img--deskop {
+    display: block;
+  }
+  .model-card__img--mobile {
+    display: none;
+  }
+  .dimensions__button {
+    font-size: 1.8rem;
+  }
+  .dimensions__detail {
+    font-size: 1.4rem;
+  }
+  .dimensions__instagram {
+    display: none;
+  }
+  .header__space {
+    height: 8vh;
+  }
+  .header__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    max-width: 1200px;
+    margin-bottom: 3em;
+    overflow: hidden;
+  }
+  .header__details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__model-name {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 5rem;
+    letter-spacing: 0.4em;
+    text-align: center;
+  }
+  .header__instagram {
+    display: block;
+    padding: 0.1em 0.2em;
+    width: 100%;
+    font-size: 3.35rem;
+    color: #583101;
+    text-align: center;
+    letter-spacing: 0.15em;
+    border: 1px solid transparent;
+    transition: color 0.3s linear;
+  }
+  .header__instagram:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .header__model-banner {
+    margin-bottom: 0;
+  }
+  .header__model-banner--deskop {
+    display: block;
+  }
+  .header__model-banner--mobile {
+    display: none;
+  }
+  .grid-container-model {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .application {
+    max-width: 500px;
+  }
+  .application__h2 {
+    font-size: 1.8rem;
+  }
+  .application__text, .application__photo-instruction, .application__custom-text, .application__privacy {
+    font-size: 1.3rem;
+  }
+  .application__label, .application__apply-btn, .application__clear-btn, .application__close-btn, .application__upload-label {
+    font-size: 1.5rem;
+  }
+  .application__btn-box {
+    justify-content: space-evenly;
+  }
+  .reg__email-box {
+    width: 70%;
+  }
+  .reg__email {
+    width: 70%;
+    font-size: 1.6rem;
+  }
+  .reg__instruction {
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+  }
+  .about__text,
+  .registration__text {
+    margin-bottom: 2em;
+    font-size: 1.3rem;
+  }
+  .about__h2-text,
+  .registration__h2-text {
+    font-size: 1.6rem;
+  }
+  .not-found__info, .not-found__link {
+    font-size: 1.4rem;
+  }
+  .not-found__link {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .logo {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .logo:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .burger-btn {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .burger-btn:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .burger-btn:hover .burger-btn__bars::after,
+  .burger-btn:hover .burger-btn__bars::before {
+    width: 100%;
+  }
+  .burger-btn__bars::before {
+    transition-delay: 0.15s;
+  }
+  .nav__close-btn {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .nav__close-btn:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .nav__link {
+    font-size: 2rem;
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .nav__link:hover {
+    color: #b08968;
+  }
+  .nav__link:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .nav__insta-icon:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__insta-icon:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__logo:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__menu-links:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin-top: 6em;
+  }
+  .model-card {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .model-card:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .model-card__box {
+    margin: 1em;
+  }
+  .model-card__name {
+    font-size: 1.55rem;
+  }
+  .contact {
+    height: 100%;
+  }
+  .contact__name {
+    font-size: 1.5rem;
+    letter-spacing: 0.75em;
+  }
+  .contact__job-title {
+    letter-spacing: 0.5em;
+    font-size: 1.1rem;
+  }
+  .contact__phone {
+    font-size: 1.5rem;
+    letter-spacing: 0.45em;
+  }
+  .contact__email {
+    font-size: 1.4rem;
+    letter-spacing: 0.35em;
+  }
+  .contact__phone:hover, .contact__email:hover {
+    color: #b08968;
+  }
+  .contact__phone, .contact__email, .contact__insta {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .contact__phone:focus, .contact__email:focus, .contact__insta:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__menu-links {
+    font-size: 1.6rem;
+  }
+  .footer__menu-links:hover {
+    color: #b08968;
+  }
+  .footer__copyright {
+    font-size: 1.3rem;
+  }
+  .model-banner {
+    height: 85vh;
+  }
+  .header__space {
+    height: 9vh;
+  }
+  .header__details-box {
+    margin: 0 8em 4em 0;
+    margin-right: 8em;
+  }
+  .header__instagram:hover {
+    color: #b08968;
+  }
+  .dimensions__button {
+    display: none;
+  }
+  .dimensions__box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3em;
+    width: 78%;
+    transform: translateY(0%);
+  }
+  .dimensions__details {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .dimensions__detail {
+    margin-right: 0.45em;
+    font-size: 1.55rem;
+  }
+  .dimensions__instagram {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .dimensions__instagram:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .application {
+    max-width: 650px;
+  }
+  .application__input {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .application__input:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .application__clear-btn, .application__apply-btn, .application__upload-label, .application__close-btn {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+    transition: box-shadow 0.3s linear;
+  }
+  .application__clear-btn:focus, .application__apply-btn:focus, .application__upload-label:focus, .application__close-btn:focus {
+    outline: none;
+    background-color: transparent;
+    box-shadow: 4px 4px 6px rgb(115, 104, 97);
+  }
+  .application__clear-btn:hover, .application__apply-btn:hover, .application__upload-label:hover, .application__close-btn:hover {
+    box-shadow: 4px 4px 6px rgb(161, 150, 142);
+  }
+  .about__h2-text {
+    border: 1px solid transparent;
+    transition: color 0.3s linear;
+  }
+  .about__h2-text:hover {
+    color: #b08968;
+  }
+  .about__h2-text:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .not-found__info, .not-found__link {
+    font-size: 1.6rem;
+  }
+  .not-found__link {
+    font-size: 1.7rem;
+  }
+  .reg__text {
+    font-size: 1.3rem;
+  }
+  .reg__email-button {
+    width: 50%;
+  }
+}/*# sourceMappingURL=main.css.map */
